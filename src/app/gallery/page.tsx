@@ -12,12 +12,19 @@ import GalleryImg6 from "../../assets/images/gallery-6.jpeg";
 const GalleryPage = () => {
   useEffect(() => {
     const galleryElement = document.getElementById("gallery-of-page");
+    // Backup original console.log
+    const originalConsoleLog = console.log;
+
+    // Disable console.log
+    console.log = () => {};
     if (galleryElement) {
       lightGallery(galleryElement, {
         plugins: [],
         speed: 500,
       });
     }
+    // Restore original console.log after lightGallery initialization
+    console.log = originalConsoleLog;
   }, []);
 
   return (
