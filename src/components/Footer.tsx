@@ -20,32 +20,32 @@ const Footer = () => {
         <div className="wrapper-footer-menu">
           <ul className="footer-menu">
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/">
                 Home
               </Link>
             </li>
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/services">
                 Services
               </Link>
             </li>
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/about">
                 About
               </Link>
             </li>
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/gallery">
                 Gallery
               </Link>
             </li>
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/location">
                 Location
               </Link>
             </li>
             <li className="footer-menu-item">
-              <Link className="footer-menu-link" href="">
+              <Link className="footer-menu-link" href="/contact-us">
                 Contact us
               </Link>
             </li>

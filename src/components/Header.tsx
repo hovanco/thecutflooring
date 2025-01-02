@@ -1,14 +1,50 @@
 "use client";
-import TheCutFlooringLogo from "../assets/images/the-cut-flooring-logo.png";
 import Link from "next/link";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
+import TheCutFlooringLogo from "../assets/images/the-cut-flooring-logo.png";
 
 const Header = () => {
+  const [active, setActive] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+
+  const Menus = [
+    {
+      name: "Home",
+      link: "/",
+    },
+    {
+      name: "Services",
+      link: "/services",
+    },
+    {
+      name: "About",
+      link: "/about",
+    },
+    {
+      name: "Gallery",
+      link: "/gallery",
+    },
+    {
+      name: "Location",
+      link: "/location",
+    },
+    {
+      name: "Contact us",
+      link: "/contact-us",
+    },
+  ];
 
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const currentPath = window.location.pathname;
+      const currentIndex = Menus.findIndex((menu) => menu.link === currentPath);
+      setActive(currentIndex);
+    }
+  }, []);
 
   return (
     <header className="section header-section">
@@ -31,36 +67,18 @@ const Header = () => {
         </div>
         <div className="divider-line" />
         <ul className="header-menu">
-          <li className="header-menu-item is-active">
-            <Link className="header-menu-link" href="/">
-              Home 
-            </Link>
-          </li>
-          <li className="header-menu-item">
-            <Link className="header-menu-link" href="/services">
-              Services
-            </Link>
-          </li>
-          <li className="header-menu-item">
-            <Link className="header-menu-link" href="/about">
-              About
-            </Link>
-          </li>
-          <li className="header-menu-item">
-            <Link className="header-menu-link" href="/gallery">
-              Gallery
-            </Link>
-          </li>
-          <li className="header-menu-item">
-            <Link className="header-menu-link" href="/location">
-              Location
-            </Link>
-          </li>
-          <li className="header-menu-item">
-            <Link className="header-menu-link" href="/contact-us">
-              Contact us
-            </Link>
-          </li>
+          {Menus.map((menu, index) => (
+            <li
+              key={index}
+              className={`header-menu-item ${
+                active === index ? "is-active" : ""
+              }`}
+            >
+              <Link href={menu.link} onClick={() => setActive(index)}>
+                <span className="header-menu-link">{menu.name}</span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="header-menu-mobile">

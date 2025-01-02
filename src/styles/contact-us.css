@@ -45,6 +45,7 @@ textarea {
   width: 100%;
   border-radius: 4px;
   height: calc(100% - 58px);
+  color: var(--white);
   background-color: var(--graphite-black);
   border: 1px solid var(--white);
 }
@@ -65,6 +66,7 @@ input {
   box-sizing: border-box;
   border: 1px solid var(--white);
   font-size: var(--font-14);
+  color: var(--white);
   background-color: var(--graphite-black);
 }
 
