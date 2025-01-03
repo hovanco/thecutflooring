@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LocationMapsImg from "../../assets/images/location-maps-img.jpg";
+import MapComponent from "@/components/Maps";
 
 const LocationPage = () => {
   return (
@@ -8,13 +9,14 @@ const LocationPage = () => {
         <div className="container">
           <div className="row">
             <div className="col-6 col-large-12">
-              <div className="location-wrapper-img">
+              {/* <div className="location-wrapper-img">
                 <img
                   className="location-img"
                   src={LocationMapsImg.src}
                   alt="LocationMapsImg"
                 />
-              </div>
+              </div> */}
+              <MapComponent />
             </div>
             <div className="col-6 col-large-12">
               <div className="location-time">

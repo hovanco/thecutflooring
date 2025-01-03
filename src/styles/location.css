@@ -7,6 +7,10 @@
   background-color: var(--deep-black);
 }
 
+#location-page .row>[class*=col-] > div {
+  cursor: pointer;
+}
+
 #location-page .location-img {
   max-width: 100%;
   width: 100%;
